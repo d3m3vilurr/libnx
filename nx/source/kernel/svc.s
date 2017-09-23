@@ -32,6 +32,11 @@ SVC_BEGIN svcExitProcess
 	ret
 SVC_END
 
+SVC_BEGIN svcExitThread
+	svc  0xA
+	ret
+SVC_END
+
 SVC_BEGIN svcSleepThread
 	svc 0xB
 	ret
