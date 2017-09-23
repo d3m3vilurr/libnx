@@ -44,6 +44,7 @@ typedef struct _regs_t
 Result svcSetHeapSize(void** out_addr, u64 size);
 Result svcQueryMemory(MemInfo* meminfo_ptr, u32 *pageinfo, u64 addr);
 void svcExitProcess() __attribute__((noreturn));
+Result svcCreateThread(Handle *handle, void* entry, u64 arg, void* stacktop, u32 prio, s32 processor_id);
 Result svcStartThread(Handle handle);
 void svcExitThread() __attribute__((noreturn));
 Result svcSleepThread(u64 nano);

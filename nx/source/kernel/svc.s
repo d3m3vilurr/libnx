@@ -32,6 +32,14 @@ SVC_BEGIN svcExitProcess
 	ret
 SVC_END
 
+SVC_BEGIN svcCreateThread
+	str x0, [sp, #-16]!
+	svc 0x8
+	ldr x2, [sp], #16
+	str w1, [x2]
+	ret
+SVC_END
+
 SVC_BEGIN svcStartThread
 	svc  0x9
 	ret
